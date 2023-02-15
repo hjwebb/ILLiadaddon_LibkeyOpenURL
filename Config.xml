@@ -1,0 +1,34 @@
+<Configuration>
+	<Name>Open URL Chrome</Name>
+	<Author>IDS Project</Author>
+	<Version>3.0</Version>
+	<Active>true</Active>
+
+	<Description>Does a full open URL query for a given ILLiad Request. Can be used with the SFX Link Resolver. Should work with any OpenURL resolver.</Description>
+
+	<Forms>
+		<Form>FormRequest</Form>
+	</Forms>	
+
+	<Settings>
+		<Setting name='AutoSearch' value='true' type='boolean'>
+			<Description>Defines whether the search should be automatically performed when the form opens.</Description>
+		</Setting>
+		<Setting name='OpenUrlBaseArticle' value='https://suny-ups.primo.exlibrisgroup.com/openurl/01SUNY_UPS/01SUNY_UPS:01SUNY_UPS' type='string'>
+			<Description>The base article URL for the openURL resolver to use. For SFX users this is the same URL for articles and books.</Description>
+		</Setting>
+		<Setting name='OpenUrlBaseBook' value='https://suny-ups.primo.exlibrisgroup.com/openurl/01SUNY_UPS/01SUNY_UPS:01SUNY_UPS' type='string'>
+			<Description>The base book URL for the openURL resolver to use. For SFX users this is the same URL for articles and books.</Description>
+		</Setting>
+		<Setting name='LibkeyID' value='1990' type='string'>
+			<Description>Your library ID with ThirdIron.</Description>
+		</Setting>
+		<Setting name='OpenUrlBrand' value='PrimoOpenURL' type='string'>
+			<Description>The local branding to be displayed on the tab within ILLiad.</Description>
+		</Setting>
+	</Settings>
+
+	<Files>
+		<File>openURL.lua</File>
+	</Files>
+</Configuration>
