@@ -1,8 +1,10 @@
+--openURLlibkey.lua (version 3.1)
 -- openURL.lua (version 0.1, 5/5/2010)
 -- Kevin Reiss kevin.reiss@mail.cuny.edu
 --
 -- Opens OpenURL menu 
 --updated March 29, 2020 Heidi Webb for Chromium and doi
+--updated September 2023 Heidi Webb 
 
 -- Load the .NET System Assembly
 luanet.load_assembly("System");
@@ -14,7 +16,7 @@ Types["Process"] = luanet.import_type("System.Diagnostics.Process");
 local settings = {};
 settings.myArticleResolver = GetSetting("OpenUrlBaseArticle");
 settings.myBookResolver = GetSetting("OpenUrlBaseBook");
-settings.myLibraryID = GetSetting("LibkeyID");
+settings.mylibkeyid = GetSetting("LibkeyID");
 settings.myBranding = GetSetting("OpenUrlBrand");
 -- set autoSearch to true for this script to automatically run the search when the request is opened.
 settings.autoSearch = GetSetting("AutoSearch");
@@ -58,10 +60,10 @@ function SearchLibkey()
 	
 		if GetFieldValue("Transaction", "DOI") ~= "" then
 			local myDOI = GetFieldValue("Transaction", "DOI");
-			myURL = "https://libkey.io/libraries/" .. settings.myLibraryID .. "/" .. myDOI;
+			myURL = "https://libkey.io/libraries/" .. settings.mylibkeyid .. "/" .. myDOI;
 		elseif GetFieldValue("Transaction", "PMID") ~= "" then
 			local myPMID = GetFieldValue("Transaction", "PMID");
-			myURL = "https://libkey.io/libraries/" .. settings.myLibraryID .. "/" .. myPMID;
+			myURL = "https://libkey.io/libraries/" .. settings.mylibkeyid .. "/" .. myPMID;
 		elseif GetFieldValue("Transaction", "RequestType") == "Article" then
 			-- build URL for articles
 			local myGenre = "genre=article";
