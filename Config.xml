@@ -1,7 +1,7 @@
 <Configuration>
 	<Name>Open URL Libkey Chrome</Name>
 	<Author>IDS Project</Author>
-	<Version>3.5</Version>
+	<Version>3.1</Version>
 	<Active>true</Active>
 
 	<Description>Does a full open URL query for a given ILLiad Request. Can be used with the SFX Link Resolver. Should work with any OpenURL resolver.</Description>
@@ -23,12 +23,12 @@
 		<Setting name='LibkeyID' value='1990' type='string'>
 			<Description>Your library ID with ThirdIron.</Description>
 		</Setting>
-		<Setting name='OpenUrlBrand' value='PrimoOpenURL' type='string'>
+		<Setting name='OpenUrlBrand' value='PrimoLibkeyOpenURL' type='string'>
 			<Description>The local branding to be displayed on the tab within ILLiad.</Description>
 		</Setting>
 	</Settings>
 
 	<Files>
-		<File>openURL.lua</File>
+		<File>openURLlibkey.lua</File>
 	</Files>
 </Configuration>
